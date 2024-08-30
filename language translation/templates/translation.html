@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Result</title>
+</head>
+<style>
+    body {
+        background-size: cover;
+        background-color: #fbf8f8;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    h1 {
+        font-size: 36px;
+        color: rgb(255, 253, 253);
+    }
+
+    h2 {
+        color: rgb(253, 251, 251);
+    }
+
+    h3 {
+        color: rgb(253, 251, 251);
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+</style>
+<body background="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQBDgMBIgACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAACAQMABQQH/8QAGxABAQEBAQEBAQAAAAAAAAAAAAERAhIxIUH/xAAZAQEBAQEBAQAAAAAAAAAAAAACAQMABAX/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARECEv/aAAwDAQACEQMRAD8A/M8WQpFkfWfG1MXCxZyUg6Mn4UhSLn6Ug6GLjTEwsTQx2NfKYrtZ47GvlMc7WflPLXHWOdrKxLGl5SxMWVlYljSwcGlrPBxriYFhSsbBxtYFgnrOwbGliWBS1lg9RrYFg05WaVpYKFGeJjQLBLRcVFFFCqIT28WRZCkeyR821JCkXCkOBaOfpTkpCwpBtHHeTx2Fg6OOw8djsd6DymNcTy7E1niWNfKXlV1lYljXymJV1jg2NrBvIlOmN5SxrYODTlZ2BY1vI4FhSsbBs/W1g2DjSVlYNjSwbAsKVlYFjawLBOVniYeIlhs6ONKmCsrPHFRQnvSFIshY9sj5dqSFIshSHgWoUhTlYUG1JyvksXFwdDy7Dx2FiaGO8ni4uJoeUsaYliWLrKwby1sTBsKVlYNjW8jYlhSsrAsbWDYNhyssG8tLBsGlrKwbGtgWBhysrBsa2DYNhysrAsa2DWdjSVlYFjahYNOVlUw8Sxx6FHDsTBXXv4USHI9sfKtdIciQoYWrFkdDkKBamLhYpQdHHYbsJNHy6xpjscmssdjTHOXWViWNOog1dZWDY1sGwSlY3kbGtiUa0lY3kLG1gWDS1lYFjawLAw5WNg2NbBsGtJWVgdctbBsCnKxsGxrYFCtJWViWNMSxClZYmHYjje7IUEo9kfLpwokWFApQoMPkmdWFjopwXYuLFVNFxOVNFxJiO0alhIlILBsaUKFWULAsaWClOVlYNjWwLBrSVlRsaUKFOVnQsaUKJxn0Fa0bArSMrAsa0OmbSM6NNLEKAmENcevbhQIUeuPm1pz8KDyRwKcKBChBWkUYpQChDFJLFVHKLkqoix1RalSqP8GklGkFCtP4FGlBDowonAv1nfrShQrSM79Gn0HQtIFGl0NGnA6Dr6dC/WdaQRp0KJwRpD04o9mUpWcpSvTK8FjXmlKzlKU5QrWFGcpw2djSLoaUKUKcXQhaaE5JfxzkVyOc7HOc6jXClX+DfolE/g0qNGkFCnQo6cChWnTOja0gdBT6ChWkDoaVGjTg0KdCs60gUSoocQOjDpxR6spSspS1vHjsaynKxlOVpKFjaUpWUpSnKzsbSnrGUpVgWNYsoSrKehYero67XamHrtHXamuwrUTXamux1FyWpqxKNWjUtKIFK0LQpxOmfRWh0FrSD18Z06FGtINGlR6StIFG/CoVnTgjVo1DiDVqOKPvlKVlKWtnnsaynKxlKUoFjaU5WM6OU4F5bSlKxlOdNIzvLXSlZSlKoY01fQa7XJjTXaGu1Ew9doa70muw9G1NS1HY60bUtS1DkdRrr0Fo05Eo2raFoaciUatv4FqU5EtClaNZ2tINDouqFonBtGraNrjkSprqg6ePtixzm8eelCc4oNKHHOKBShRzmkZ04srnEByrK5zhVyOcio5yOclc5FQa5yEzrq5w04GhXOZ04NGq4aYdBXOAozo1zkaxKFc5xwajnCr/2Q==">
+    <center>
+        <h1><font size="100" color="white">Translation Result</font></h1>
+        <br>
+        <p><strong><h2>Source Text:</h2></strong></p>
+        <p><h3>{{ source_text }}</h3></p>
+        <br>
+        <p><strong><h2>Detected Languages for Each Word:</h2></strong></p>
+        <ul>
+            <h3>
+            {% for lang in detected_languages %}
+                {{ lang }}
+            {% endfor %}
+        </h3>
+        </ul>
+        <br>
+        <p><strong><h2>Translated Text:</h2></strong></p>
+        <p><h3>{{ translated_text }}</h3></p>
+    </center>
+</body>
+</html>

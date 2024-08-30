@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Translation</title>
+</head>
+<style>
+body {
+    background-color: rgb(172, 251, 251);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    margin: 0; 
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    color: rgb(12, 11, 11);
+}
+
+#input-text {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    padding: 5px;
+}
+
+select {
+    font-size: 16px;
+    padding: 5px;
+}
+
+input[type="submit"] {
+    background-color: #070a0b;
+    color: rgb(238, 237, 240);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container textarea {
+    width: calc(95% - 30px); /* Adjust the width as needed */
+    padding-right: 40px; /* Space for the microphone icon */
+}
+
+.microphone-icon {
+    position: absolute;
+    top: 10%;
+    right: 70px; /* Adjust the position as needed */
+    transform: translateY(-50%);
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+</style>
+<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpND5ZuCAvBfVev28hurUrQPK78edO_XZAssegqnUqExsvwpvetElm57oKw&s">
+    <center>
+        <h1><font size="200" color="black">Language Translation</font></h1>
+        <form action="/" method="post">
+            <div class="input-container">
+                <b><textarea id="source-text" name="code" placeholder="Enter any word" wrap="off" rows="100" cols="1000"></textarea></b>
+                <img src="data:image/png;base64,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" alt="Microphone" class="microphone-icon" onclick="startRecording()">
+            <select name="target_language">
+                {% for code, name in language_names.items() %}
+                <option value="{{ code }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+            <br><br><br>
+           <input type="submit" value="Translate">
+        </form>
+    </center>
+    <script>
+        function startRecording() {
+            const recognition = new webkitSpeechRecognition(); // Create a new SpeechRecognition object
+            recognition.lang = ''; // Automatically detect language
+            recognition.start(); // Start speech recognition
+            
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript; // Get the recognized text
+                document.getElementById('source-text').value += transcript; // Append the recognized text to the textarea
+            };
+            
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+            };
+        }
+    </script>
+</body>
+</html>
